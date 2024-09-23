@@ -4,7 +4,7 @@ import { Expense } from '../interfaces/expense.interface';
 
 const PATH_TO_JSON: string = path.join(__dirname, '..', 'expenses.json');
 
-function readDataBase(PATH_TO_JSON): Expense[] {
+function readDataBase(): Expense[] {
     let expenses: Expense[] = [];
     if(!fs.existsSync(PATH_TO_JSON)){
         fs.writeFileSync(PATH_TO_JSON, '[]', 'utf8');
@@ -18,3 +18,5 @@ function writeDataBase(data: Expense[]){
     const updatedExpenses = JSON.stringify(data, null, 2);
     fs.writeFileSync(PATH_TO_JSON, updatedExpenses, 'utf-8');
 }
+
+export {readDataBase, writeDataBase}
