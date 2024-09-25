@@ -17,7 +17,7 @@ program
     });
 
 program
-    .command('delte')
+    .command('delete')
     .requiredOption('-i --id <id>', 'ID of the expense')
     .action((options) => {
         const {id} = options;
