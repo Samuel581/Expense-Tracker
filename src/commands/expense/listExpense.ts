@@ -3,18 +3,17 @@ import { readDataBase } from "../../utils/fileOperations";
 
 function listExpenses(category: string){
     const allExpenses: Expense[] = readDataBase();
-    switch (category) {
-        case 'all':
-        case 'All':
-            console.log(allExpenses);
-            break;
-        default:
-            try {
-                console.log(allExpenses.filter((expense: Expense) => expense.category === category));
-            } catch (error) {
-                console.error(`The category ${category} has not been found used in your expenses`, error);
-            }
-            break;
+    if(category==='all' || 'All'){
+        console.log(allExpenses);
+        return true;
+    }
+    else{
+        if(!allExpenses.find((expense: Expense) => expense.category===category)){
+            console.log(`The category ${category} was not found in your expenses history`);
+            return false;
+        }
+        console.log(allExpenses.filter((expense: Expense) => expense.category === category));
+        return true;
     }
 }
 
