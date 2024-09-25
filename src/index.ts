@@ -1,6 +1,7 @@
 import { Expense } from "./interfaces/expense.interface";
 import  addExpense  from "./commands/expense/addExpense";
 import { Command } from "commander";
+import deleteExpense from "./commands/expense/deleteExpense";
 
 const program = new Command();
 
@@ -13,6 +14,14 @@ program
     .action((options) => {
         const {description, amount, category} = options;
         addExpense(description, amount, category);
+    });
+
+program
+    .command('delte')
+    .requiredOption('-i --id <id>', 'ID of the expense')
+    .action((options) => {
+        const {id} = options;
+        deleteExpense(id);
     })
 
 program.parse(process.argv);

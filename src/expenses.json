@@ -1,0 +1,16 @@
+[
+  {
+    "id": "e3bdc848-9785-456f-9671-e817a65073c3",
+    "description": "Soda",
+    "ammount": "1.25",
+    "date": "2024-09-25T06:06:36.058Z",
+    "category": "Food"
+  },
+  {
+    "id": "8aeafc78-4621-40ca-b1c8-c2220f849483",
+    "description": "Bus",
+    "ammount": "1.5",
+    "date": "2024-09-25T06:06:57.186Z",
+    "category": "Transport"
+  }
+]
