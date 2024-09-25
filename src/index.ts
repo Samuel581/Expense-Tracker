@@ -2,6 +2,7 @@ import { Expense } from "./interfaces/expense.interface";
 import  addExpense  from "./commands/expense/addExpense";
 import { Command } from "commander";
 import deleteExpense from "./commands/expense/deleteExpense";
+import listExpenses from "./commands/expense/listExpense";
 
 const program = new Command();
 
@@ -22,6 +23,14 @@ program
     .action((options) => {
         const {id} = options;
         deleteExpense(id);
+    })
+
+program
+    .command('list')
+    .option('-c --category <category>', 'Category to filter', 'All')
+    .action((option) => {
+        const {category} = option;
+        listExpenses(category);
     })
 
 program.parse(process.argv);
