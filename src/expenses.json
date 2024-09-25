@@ -7,10 +7,10 @@
     "category": "Food"
   },
   {
-    "id": "8aeafc78-4621-40ca-b1c8-c2220f849483",
-    "description": "Bus",
-    "ammount": "1.5",
-    "date": "2024-09-25T06:06:57.186Z",
-    "category": "Transport"
+    "id": "a5024a57-cfff-4f0f-8162-ad9c81a96704",
+    "description": "Gasoline",
+    "ammount": "50",
+    "date": "2024-09-25T06:36:15.070Z",
+    "category": "Car"
   }
 ]
