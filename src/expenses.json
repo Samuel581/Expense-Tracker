@@ -1,16 +1,16 @@
 [
   {
-    "id": "c506edb7-90dc-43cf-be86-33c7f31a0f25",
-    "description": "Bus",
-    "amount": 1,
-    "date": "2024-09-26T02:01:57.708Z",
-    "category": "Transport"
-  },
-  {
-    "id": "8e0f15fc-aa16-485e-bc74-0775c44ce784",
+    "id": "d1d2d353-3f17-4192-b642-723b859c3abe",
     "description": "Soda",
     "amount": 0.6,
-    "date": "2024-09-26T02:02:03.506Z",
+    "date": "2024-09-26T02:24:33.741Z",
     "category": "Food"
+  },
+  {
+    "id": "97edb1c4-c5aa-4430-bc73-5fec2ee76bd8",
+    "description": "Bus",
+    "amount": 1,
+    "date": "2024-09-26T02:24:38.367Z",
+    "category": "Transport"
   }
 ]
