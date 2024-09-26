@@ -10,7 +10,10 @@ function readDataBase(): Expense[] {
         fs.writeFileSync(PATH_TO_JSON, '[]', 'utf8');
     }
     let data = fs.readFileSync(PATH_TO_JSON, 'utf-8');
-    expenses = JSON.parse(data) as Expense[];
+    expenses = JSON.parse(data).map((expense: Expense) => ({
+        ...expense,
+        date: new Date(expense.date)
+    })) as Expense[]
     return expenses;
 }
 

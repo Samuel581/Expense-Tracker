@@ -1,16 +1,16 @@
 [
   {
-    "id": "e3bdc848-9785-456f-9671-e817a65073c3",
+    "id": "d1d2d353-3f17-4192-b642-723b859c3abe",
     "description": "Soda",
-    "ammount": "1.25",
-    "date": "2024-09-25T06:06:36.058Z",
+    "amount": 0.6,
+    "date": "2024-09-26T02:24:33.741Z",
     "category": "Food"
   },
   {
-    "id": "a5024a57-cfff-4f0f-8162-ad9c81a96704",
-    "description": "Gasoline",
-    "ammount": "50",
-    "date": "2024-09-25T06:36:15.070Z",
-    "category": "Car"
+    "id": "97edb1c4-c5aa-4430-bc73-5fec2ee76bd8",
+    "description": "Bus",
+    "amount": 1,
+    "date": "2024-09-26T02:24:38.367Z",
+    "category": "Transport"
   }
 ]
