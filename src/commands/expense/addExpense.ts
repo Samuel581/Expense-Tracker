@@ -6,8 +6,8 @@ function addExpense(description: string, amount: number, category: string){
     const newExpense: Expense = {
         id: uuidv4(),
         description: description,
-        ammount: amount,
-        date: new Date().toISOString(),
+        amount: amount,
+        date: new Date(),
         category: category
     }
     console.log(`Expense ${description} added`);

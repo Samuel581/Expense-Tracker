@@ -6,10 +6,12 @@ function summaryExpenses(month: number){
     let summary: number = 0;
     if(month===13){
         allExpenses.forEach((expense: Expense) => {
-            summary = summary + expense.ammount;
+            summary += expense.amount;
         })
         console.log(`The summary for all the expenses is $${summary}`);
         return true;
     }
     
 }
+
+export default summaryExpenses;
