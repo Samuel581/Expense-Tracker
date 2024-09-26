@@ -5,10 +5,12 @@ function summaryExpenses(month: number){
     const allExpenses: Expense[] = readDataBase()
     let summary: number = 0;
     if(month===13){
+        console.log(`Summary for all months: `);
         allExpenses.forEach((expense: Expense) => {
+            console.log(`- ${expense.description}: $${expense.amount} (${expense.category} on ${expense.date.toLocaleDateString()})`);
             summary += expense.amount;
         })
-        console.log(`The summary for all the expenses is $${summary}`);
+        console.log(`* Total amount spent [$${summary}]`);
         return true;
     }
     const filteredExpenses: Expense[] = allExpenses.filter((expense: Expense) => {
@@ -20,11 +22,13 @@ function summaryExpenses(month: number){
         return false;
     }
     
+    console.log(`Summary for month ${month}: `);
     filteredExpenses.forEach((expense: Expense) => {
+        console.log(`- ${expense.description}: $${expense.amount} (${expense.category} on ${expense.date.toLocaleDateString()})`);
         summary += expense.amount;
     })
 
-    console.log(`The total expenses of the month ${month} were $${summary}`);
+    console.log(`* Total amount spent [$${summary}]`);
     return true;
     
 }
