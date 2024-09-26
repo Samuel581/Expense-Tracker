@@ -3,7 +3,7 @@ import { readDataBase } from "../../utils/fileOperations";
 
 function listExpenses(category: string){
     const allExpenses: Expense[] = readDataBase();
-    if(category==='all' || 'All'){
+    if(category==='all' || category === 'All'){
         console.log(allExpenses);
         return true;
     }
