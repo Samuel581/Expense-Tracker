@@ -4,6 +4,7 @@ import { Command } from "commander";
 import deleteExpense from "./commands/expense/deleteExpense";
 import listExpenses from "./commands/expense/listExpense";
 import summaryExpenses from "./commands/expense/summaryExpense";
+import { exportToCSV } from "./commands/misc/exportToCSV";
 
 const program = new Command();
 
@@ -41,6 +42,13 @@ program
         const {month} = options;
         summaryExpenses(month);
 
+    })
+
+program
+    .command('export')
+    .description('Export expenses to CSV')
+    .action(() => {
+        exportToCSV();
     })
 
 program.parse(process.argv);
