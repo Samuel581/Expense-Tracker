@@ -132,3 +132,4 @@ dist
 # database
 
 src/expenses.json
+src/data/expenses.csv
