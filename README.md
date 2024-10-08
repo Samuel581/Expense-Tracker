@@ -1,55 +1,55 @@
 # Expense-Tracker
 
-Build a simple expense tracker application to manage your finances. The application should allow users to add, delete, and view their expenses. The application should also provide a summary of the expenses.
+This is a expense tracker via CLI that let's user add, update, delete, view all expenses and view a summary of all expenses by month.
+This is the solution to [Expense Tracker](https://roadmap.sh/projects/expense-tracker) challenge from [Roadmap.sh](https://roadmap.sh/).
 
-## Requirements
-
-Application should run from the command line and should have the following features:
-
-Users can add an expense with a description and amount.
-Users can update an expense.
-Users can delete an expense.
-Users can view all expenses.
-Users can view a summary of all expenses.
-Users can view a summary of expenses for a specific month (of current year).
-Here are some additional features that you can add to the application:
-
-Add expense categories and allow users to filter expenses by category.
-Allow users to set a budget for each month and show a warning when the user exceeds the budget.
-Allow users to export expenses to a CSV file.
-The list of commands and their expected output is shown below:
+## Usage
 
 ```bash
-$ expense-tracker add --description "Lunch" --amount 20
-# Expense added successfully (ID: 1)
+$ npx ts-node src/index.ts add --description "Lunch" --amount 20 --category "Food"
+# Expense added Lunch
 
-$ expense-tracker add --description "Dinner" --amount 10
-# Expense added successfully (ID: 2)
+$ npx ts-node src/index.ts list
+# +--------------------------------------+-------------+--------+------------+-----------+
+# | id                                   | description | amount | date       | category  |
+# +--------------------------------------+-------------+--------+------------+-----------+
+# | d1d2d353-3f17-4192-b642-723b859c3abe | Soda        | 0.6    | 2024-09-26 | Food      |
+# | 97edb1c4-c5aa-4430-bc73-5fec2ee76bd8 | Bus         | 1      | 2024-09-26 | Transport |
+# | 6d454f0f-595c-42fe-bf36-0cc0dee97ae4 | Candy       | 0.25   | 2024-10-07 | Food      |
+# +--------------------------------------+-------------+--------+------------+-----------+
 
-$ expense-tracker list
-# ID  Date       Description  Amount
-# 1   2024-08-06  Lunch        $20
-# 2   2024-08-06  Dinner       $10
+# Also list can be filtered by category with --category <Category>
 
-$ expense-tracker summary
-# Total expenses: $30
+$ npx ts-node src/index.ts summary
+# Summary for all months: 
+# - Soda: $0.6 (Food on 9/25/2024)
+# - Bus: $1 (Transport on 9/25/2024)
+# - Candy: $0.25 (Food on 10/7/2024)
+# * Total amount spent [$1.85]
 
-$ expense-tracker delete --id 1
-# Expense deleted successfully
+$ npx ts-node src/index.ts --month 9
+# Summary for month 9:
+# - Soda: $0.6 (Food on 9/25/2024)
+# - Bus: $1 (Transport on 9/25/2024)
 
-$ expense-tracker summary
-# Total expenses: $20
 
-$ expense-tracker summary --month 8
-# Total expenses for August: $20
+$ npx ts-node src/index.ts delete --id 1
+# Expense with the ID 1 deleted successfully
 ```
 
-## Implementation
+## Extra
 
-You can implement the application using any programming language of your choice. Here are some suggestions:
+Each command has it's own help message that can be accessed by running the command with `--help` flag.
 
-Use any programming language for any available module for parsing command arguments (e.g. python with the argparse, node.js with commander etc).
-Use a simple text file to store the expenses data. You can use JSON, CSV, or any other format to store the data.
-Add error handling to handle invalid inputs and edge cases (e.g. negative amounts, non-existent expense IDs, etc).
-Use functions to modularize the code and make it easier to test and maintain.
-This project idea is a great way to practice your logic building skills and learn how to interact with the filesystem using a CLI application. It will also help you understand how to manage data and provide useful information to users in a structured way.
+```bash
+$ npx ts-node src/index.ts add --help
+# Usage: index add [options]
+
+# Adds a new expense
+
+# Options:
+ # -d, --description <description>  Description of the expense
+ # -a, --amount <amount>            Amount of the expense
+ # -c, --category <category>        Category of the expense (default: "Miscellaneous")
+ # -h, --help                       display help for command
+  ```
